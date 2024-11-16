@@ -72,5 +72,5 @@ with gr.Blocks(title="LanguageMentor 英语私教") as language_mentor_app:
         )
 
 if __name__ == "__main__":
-    language_mentor_app.launch(share=True, server_name="0.0.0.0")
+    language_mentor_app.launch(share=False, server_name="0.0.0.0")
 
