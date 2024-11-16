@@ -47,6 +47,7 @@ class ConversationAgent:
 
         # 初始化 ChatOllama 模型，配置模型参数
         self.chatbot = self.prompt | ChatOllama(
+            base_url="http://ollama.julia8848.com",
             model="llama3.1:8b-instruct-q8_0",  # 使用的模型名称
             max_tokens=8192,  # 最大生成的token数
             temperature=0.8,  # 生成文本的随机性

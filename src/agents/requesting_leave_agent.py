@@ -30,13 +30,13 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
         store[session_id] = InMemoryChatMessageHistory()
     return store[session_id]
 
-class JobInterviewAgent(ScenarioAgent):
+class RequestingLeaveAgent(ScenarioAgent):
     def __init__(self):
         super().__init__()
-        self.name = "Job Interview Agent"
-        
+        self.name = "Requesting Leave Agent"
+
         # 读取系统提示语，从文件中加载
-        with open("prompts/job_interview_prompt.txt", "r", encoding="utf-8") as file:
+        with open("prompts/requesting_leave_prompt.txt", "r", encoding="utf-8") as file:
             self.system_prompt = file.read().strip()
 
         # 创建聊天提示模板，包括系统提示和消息占位符
@@ -48,7 +48,7 @@ class JobInterviewAgent(ScenarioAgent):
         # 初始化 ChatOllama 模型，配置模型参数
         self.chatbot = self.prompt | ChatOllama(
             base_url="http://ollama.julia8848.com",
-            model="llama3.1:8b-instruct-q8_0",  # 使用的模型名称
+            model="gemma2:27b",  # 使用的模型名称
             max_tokens=8192,  # 最大生成的token数
             temperature=0.8,  # 生成文本的随机性
         )
@@ -90,3 +90,4 @@ class JobInterviewAgent(ScenarioAgent):
         )
         LOG.debug(response)  # 记录调试日志
         return response.content  # 返回生成的回复内容
+    
