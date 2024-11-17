@@ -18,53 +18,11 @@ LanguageMentor 是一款基于 LLaMA 3.1 或 GPT-4o-mini 的在线英语私教�
   - 阅读理解：提供不同难度的阅读材料，训练学生的阅读速度和理解能力。
   - 写作技巧：指导学生如何进行段落和文章的结构化写作。
 
-## 产品演示
 
-https://github.com/user-attachments/assets/6298a8e4-28fc-4a60-badc-59bff16b315e
-
-
-## 快速开始
-以下是快速开始使用 LanguageMentor 的步骤：
-
-1. **克隆仓库**
-   ```bash
-   git clone https://github.com/DjangoPeng/LanguageMentor.git
-   cd LanguageMentor
-   ```
-
-2. **创建 Python 虚拟环境**
-   使用 miniconda 或类似 Python 虚拟环境管理工具，创建一个项目专属的环境，取名为`lm`：
-   ```bash
-   conda create -n lm python=3.10
-   ```
-   激活虚拟环境
-   ```bash
-   conda activate lm
-   ```
-
-3. **配置开发环境**
-   然后运行以下命令安装所需依赖：
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   根据需要配置你的环境变量，例如 `OpenAI_API_KEY` 等。
-
-4. **运行应用**
-   启动应用程序：
-   ```bash
-   python src/main.py
-   ```
-
-5. **开始体验**
-   打开浏览器，访问 `http://localhost:7860`，开始跟着 LanguageMentor 一起学习英语！
-
-   运行画面：
-   ![gradio_demo](images/gradio.png)
-
-   对话练习：
-   ![gradio_demo_0](images/gradio_0.png)
-   ![gradio_demo_1](images/gradio_1.png)
+## 容器化部署
+```bash
+sudo docker-compose up -d --build
+```
 
 
 ## 贡献
@@ -76,8 +34,3 @@ https://github.com/user-attachments/assets/6298a8e4-28fc-4a60-badc-59bff16b315e
 ## 许可证
 本项目采用 Apache 2.0 许可证，详情请参阅 [LICENSE](LICENSE) 文件。
 
-## 联系我们
-
-如果你有任何问题或建议，请通过以下方式联系我：
-- Email: pjt73651@gmail.com
-- GitHub Issues: https://github.com/DjangoPeng/LanguageMentor/issues

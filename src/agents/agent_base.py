@@ -56,6 +56,7 @@ class AgentBase(ABC):
 
         # 初始化 ChatOllama 模型，配置参数
         self.chatbot = system_prompt | ChatOllama(
+            base_url="http://ollama.julia8848.com",  # Ollama 服务的基础 URL
             model="llama3.1:8b-instruct-q8_0",  # 使用的模型名称
             max_tokens=8192,  # 最大生成的 token 数
             temperature=0.8,  # 随机性配置

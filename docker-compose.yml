@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7860:7860"
+    restart: always
+    volumes:
+      - .:/app
+    command: ["nohup", "python", "src/main.py", ">logs/nohup.out", "2>&1", "&"]
